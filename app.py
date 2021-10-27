@@ -47,9 +47,9 @@ def showPersonal():
     theEmail = request.form["email"]
     theMessage = request.form["message"]
 
-    with open("log.txt", "a") as f:
+    with open("comments.txt", "a") as f:
         print(f"{theEmail},{theMessage}", file=f)
-    return f"Thanks {theEmail}, for visiting my website."
+    return render_template("homepage.html", title="Welcome!", heading="This is my homepage, please select the option to use",)
 
 
 if __name__ == "__main__":
